@@ -5,8 +5,13 @@ const express = require('express');
 const expressLayout = require("express-ejs-layouts");
 const router = require("./server/routes/main.js");
 
+const mongoDB = require("./server/config/db.js");
+
 const app = express();
 const PORT = 5000 || process.env.PORT;
+
+// ! Connect to DB
+mongoDB();
 
 // ! Serve Static Files
 app.use(express.static('public'));
