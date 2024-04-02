@@ -10,12 +10,14 @@ const PORT = 5000 || process.env.PORT;
 
 // ! Serve Static Files
 app.use(express.static('public'));
+
 // ! Configure Templating Engine
 app.use(expressLayout);
 app.set('layout', './layouts/main');
 app.set('view engine', 'ejs');
+
 // ! Define routes
-app.use("/", router);
+app.use("", router);
 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
