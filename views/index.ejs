@@ -81,39 +81,44 @@
 
 <!-- BLOG CARDS -->
 <div id="blog-cards" class="grid p-8 lg:grid-cols-3 md:grid-cols-2 md:gap-4">
-<div class="max-w-sm m-2 rounded overflow-hidden shadow-lg bg-white text-gray-800">
-  <img src="https://source.unsplash.com/random/x400/?business" alt="" class="w-full" />
-  <div class="px-6 py-4">
-    <div>
-      <h1 class="text-2xl">Post Title</h1>
-      <em class="text-xs mr-4">Written by Jane Doe</em>
-      <small class="text-xs text-gray-700">July 04 2020</small>
-      <p class="text-sm pt-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non, sint atque praesentium similique error aperiam hic rem nulla itaque recusandae nihil facilis animi doloribus ratione asperiores vero amet et adipisci...</p>
 
-      <a class="mt-2 text-sm flex items-center text-indigo-700 hover:text-indigo-500 hover:underline focus:underline transition duration-300" href="#">Read More
-        <svg class="ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="20px" height="16px">
-          <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
-        </svg>
-      </a>
+  <% data.forEach(post => { %>
+  
+  <div class="max-w-sm m-2 rounded overflow-hidden shadow-lg bg-white text-gray-800">
+    <img src="https://source.unsplash.com/random/x400/?business" alt="" class="w-full" />
+    <div class="px-6 py-4">
+      <div>
+        <h1 class="text-2xl"><%= post.title %></h1>
+        <em class="text-xs mr-4">Written by Jane Doe</em>
+        <small class="text-xs text-gray-700"><%= post.createdAt %></small>
+        <p class="text-sm pt-2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non, sint atque praesentium similique error aperiam hic rem nulla itaque recusandae nihil facilis animi doloribus ratione asperiores vero amet et adipisci...</p>
+
+        <a class="mt-2 text-sm flex items-center text-indigo-700 hover:text-indigo-500 hover:underline focus:underline transition duration-300" href="#">Read More
+          <svg class="ml-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="20px" height="16px">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+          </svg>
+        </a>
+      </div>
+      
     </div>
-    
-  </div>
-  <div class="px-6 py-4">
-      <span
-        class="inline-block bg-red-200 bg-opacity-75 rounded-full px-3 py-1 text-sm font-semibold text-red-800 mr-2"
+    <div class="px-6 py-4">
+        <span
+          class="inline-block bg-red-200 bg-opacity-75 rounded-full px-3 py-1 text-sm font-semibold text-red-800 mr-2"
+        >
+          #business
+        </span>
+        <span
+        class="inline-block bg-purple-200 bg-opacity-75 rounded-full px-3 py-1 text-sm font-semibold text-purple-800 mr-2"
       >
-        #business
+        #travel
       </span>
-      <span
-      class="inline-block bg-purple-200 bg-opacity-75 rounded-full px-3 py-1 text-sm font-semibold text-purple-800 mr-2"
-    >
-      #travel
-    </span>
-    
-  </div>
+      
+    </div>
 
-</div>
-<div class="max-w-sm m-2 rounded overflow-hidden shadow-lg bg-white text-gray-800">
+  </div>
+   
+  <% }) %>
+<!-- <div class="max-w-sm m-2 rounded overflow-hidden shadow-lg bg-white text-gray-800">
   <img src="https://source.unsplash.com/random/x400/?family" alt="" class="w-full" />
   <div class="px-6 py-4">
     <div>
@@ -174,5 +179,5 @@
     
   </div>
 
-</div>
+</div> -->
 </div>
